@@ -1,7 +1,15 @@
 # Package Name Manager for Flutter 🚀
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/gnassro/package_name_manager.svg)](https://github.com/gnassro/package_name_manager)
+<p align="center">
+<a href="https://www.buymeacoffee.com/gnassro" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width=120 ></a><br>
+  <a href="https://pub.dev/packages/package_name_manager"><img src="https://img.shields.io/pub/v/package_name_manager.svg" alt="Pub"></a>
+  <a href="https://github.com/gnassro/package_name_manager/blob/master/LICENSE"><img src="https://img.shields.io/github/license/gnassro/package_name_manager" alt="BSD 3-Clause License"></a>
+  <a href="https://github.com/gnassro/package_name_manager"><img src="https://img.shields.io/github/stars/gnassro/package_name_manager?style=social" alt="Pub"></a><br>
+  <a href="https://pub.dev/packages/package_name_manager/score"><img src="https://img.shields.io/pub/likes/package_name_manager?logo=flutter" alt="Pub likes"></a>
+  <a href="https://pub.dev/packages/package_name_manager/score"><img src="https://img.shields.io/pub/dm/package_name_manager?logo=flutter" alt="Pub popularity"></a>
+  <a href="https://pub.dev/packages/package_name_manager/score"><img src="https://img.shields.io/pub/points/package_name_manager?logo=flutter" alt="Pub points"></a>
+</p>
+
 
 A modern, maintained solution for managing Flutter application package names across platforms. Simplifies package renaming through a single command.
 
