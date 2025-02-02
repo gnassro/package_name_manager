@@ -20,24 +20,18 @@ class PackageNameValidator {
       return ValidationResult(
           false,
           'Invalid package name format. Must be lowercase with at least two segments '
-              '(e.g., "com.example"). Only letters, numbers, underscores, and dots allowed.'
-      );
+          '(e.g., "com.example"). Only letters, numbers, underscores, and dots allowed.');
     }
 
     final segments = packageName.split('.');
     for (final segment in segments) {
       if (segment.isEmpty) {
-        return ValidationResult(
-            false,
-            'Package name contains empty segments'
-        );
+        return ValidationResult(false, 'Package name contains empty segments');
       }
 
       if (segment.startsWith(RegExp(r'^\d'))) {
         return ValidationResult(
-            false,
-            'Segment "$segment" cannot start with a number'
-        );
+            false, 'Segment "$segment" cannot start with a number');
       }
     }
 

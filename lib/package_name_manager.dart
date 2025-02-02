@@ -10,7 +10,6 @@ import 'src/utils/package_name_validator.dart';
 /// Provides static methods to execute package renaming operations based on command-line arguments.
 /// Handles argument validation, platform-specific operations, and error handling.
 class PackageNameManager {
-
   /// Executes the package renaming process based on provided arguments.
   ///
   /// [arguments] should contain:
