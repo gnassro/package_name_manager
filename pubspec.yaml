@@ -1,6 +1,6 @@
 name: package_name_manager
 description: A modern, maintained solution for managing Flutter application package names across platforms. Simplifies package renaming through a single command.
-version: 1.0.0
+version: 1.1.0
 repository: https://github.com/gnassro/package_name_manager
 issue_tracker: https://github.com/gnassro/package_name_manager/issues
 homepage: https://github.com/gnassro/package_name_manager

@@ -8,6 +8,7 @@ class AndroidRenameSteps {
   String? oldPackageName;
 
   static const String PATH_BUILD_GRADLE = 'android/app/build.gradle';
+  static const String PATH_BUILD_GRADLE_KTS = 'android/app/build.gradle.kts';
   static const String PATH_MANIFEST =
       'android/app/src/main/AndroidManifest.xml';
   static const String PATH_MANIFEST_DEBUG =
@@ -21,20 +22,28 @@ class AndroidRenameSteps {
 
   Future<void> execute() async {
     print("Running for android");
-    if (!await File(PATH_BUILD_GRADLE).exists()) {
+
+    var buildGradlePath = PATH_BUILD_GRADLE_KTS;
+
+    if (await File(PATH_BUILD_GRADLE).exists()) {
+      buildGradlePath = PATH_BUILD_GRADLE;
+    }
+
+    if (buildGradlePath != PATH_BUILD_GRADLE_KTS ||
+        !await File(buildGradlePath).exists()) {
       print(
-          'ERROR:: build.gradle file not found, Check if you have a correct android directory present in your project'
+          'ERROR:: $buildGradlePath file not found, Check if you have a correct android directory present in your project'
           '\n\nrun " flutter create . " to regenerate missing files.');
       return;
     }
-    String? contents = await readFileAsString(PATH_BUILD_GRADLE);
+    String? contents = await readFileAsString(buildGradlePath);
 
     var reg = RegExp(r'applicationId\s*=?\s*"(.*)"',
         caseSensitive: true, multiLine: false);
     var match = reg.firstMatch(contents!);
     if (match == null) {
       print(
-          'ERROR:: applicationId not found in build.gradle file, Please file an issue on github with $PATH_BUILD_GRADLE file attached.');
+          'ERROR:: applicationId not found in build.gradle file, Please file an issue on github with $buildGradlePath file attached.');
       return;
     }
     var name = match.group(1);
@@ -43,7 +52,7 @@ class AndroidRenameSteps {
     print("Old Package Name: $oldPackageName");
 
     print('Updating build.gradle File');
-    await _replace(PATH_BUILD_GRADLE);
+    await _replace(buildGradlePath);
 
     var mText = 'package="$newPackageName">';
     var mRegex = '(package=.*)';
